@@ -6,9 +6,12 @@ class Home extends Component {
     return (
       <div>
         <h1>Home</h1>
-        {!(window.localStorage._token) ? 
+        {!(window.localStorage._token) ?
           <Link to="/login"><button>Login</button></Link> :
-          <h3>Welcome Back!</h3>
+          <div>
+            <h3>Welcome Back!</h3>
+            <p>LETS GET ONLINE</p>
+          </div>
         }
       </div>
     );
