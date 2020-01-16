@@ -37,7 +37,7 @@ class JobCard extends React.Component {
           <p className="card-text">Salary: {salary}</p>
           <p className="card-text">Equity: {equity}</p>
         </div>
-        <button onClick={() => this.handleApply(this.props.id)} className={`btn btn-info ${disabled}`}> APPLY </button>
+        <button onClick={() => this.handleApply(this.props.id)} className={`btn btn-info ${disabled}`}>{disabled ? "Application Sent!" : "APPLY"}</button>
       </div>
     );
   }
