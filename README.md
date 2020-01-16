@@ -1,6 +1,6 @@
 # Jobly
 
-Jobly is a job boad app that allows users to view companies and jobs at those companies as well as apply to jobs. The frontend is written in React and the backend is written in Node.js using Express as the framework.
+Jobly is a job board app that allows users to view companies and jobs at those companies as well as apply to jobs. The frontend is written in React and the backend is written in Node.js using Express as the framework.
 
   - **JWTs** are used for authorization and authentication.
   - Passwords are hashed using **bcrypt**.
