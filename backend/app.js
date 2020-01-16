@@ -18,9 +18,9 @@ const companiesRoutes = require("./routes/companies");
 const jobsRoutes = require("./routes/jobs");
 const authRoutes = require("./routes/auth");
 
-app.use("/companies", companiesRoutes);
-app.use("/jobs", jobsRoutes);
-app.use("/users", usersRoutes);
+app.use("/companies/", companiesRoutes);
+app.use("/jobs/", jobsRoutes);
+app.use("/users/", usersRoutes);
 app.use("", authRoutes);
 
 /** 404 handler */
