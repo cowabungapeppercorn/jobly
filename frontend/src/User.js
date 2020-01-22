@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { Form, Button, Col, Row } from "react-bootstrap";
 import JoblyApi from './JoblyApi';
 import decode from 'jwt-decode'
 
@@ -26,7 +27,7 @@ class User extends PureComponent {
         first_name: user.first_name,
         last_name: user.last_name,
         email: user.email,
-        photo_url: user.photo_url 
+        photo_url: user.photo_url
       });
     }
     else {
@@ -46,73 +47,70 @@ class User extends PureComponent {
       first_name: update.first_name,
       last_name: update.last_name,
       email: update.email,
-      photo_url: update.photo_url 
+      photo_url: update.photo_url
     });
   }
 
   render() {
     return (
-      <div>
-        <h3>Profile</h3>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="Username">Username</label>
-            <p>{this.username}</p>
-          </div>
-
-          <div>
-            <label htmlFor="first_name">Edit First Name: </label>
-            <input
-              onChange={this.handleChange}
-              placeholder="First Name"
-              type="text"
-              name="first_name"
-              value={this.state.first_name}
-            />
-          </div>
-          <div>
-            <label htmlFor="last_name">Edit Last Name: </label>
-            <input
-              onChange={this.handleChange}
-              placeholder="Last Name"
-              type="text"
-              name="last_name"
-              value={this.state.last_name}
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Edit Email: </label>
-            <input
-              onChange={this.handleChange}
-              placeholder="email"
-              type="text"
-              name="email"
-              value={this.state.email}
-            />
-          </div>
-          <div>
-            <label htmlFor="photo_url">Edit Photo: </label>
-            <input
-              onChange={this.handleChange}
-              placeholder="Edit Photo URL"
-              type="text"
-              name="photo_url"
-              value={this.state.photo_url}
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Re-Enter Password: </label>
-            <input
-              onChange={this.handleChange}
-              placeholder="Re-Enter Password"
-              type="password"
-              name="password"
-              value={this.state.password}
-            />
-          </div>
-          <button>Update Profile</button>
-        </form>
-      </div>
+      <Row>
+        <Col lg={{ span: 6, offset: 3 }}>
+          <h3>{this.username}'s Profile</h3>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group controlId="first_name">
+              <Form.Label>Edit First Name: </Form.Label>
+              <Form.Control
+                onChange={this.handleChange}
+                placeholder="First Name"
+                type="text"
+                name="first_name"
+                value={this.state.first_name}
+              />
+            </Form.Group>
+            <Form.Group controlId="last_name">
+              <Form.Label>Edit Last Name: </Form.Label>
+              <Form.Control
+                onChange={this.handleChange}
+                placeholder="Last Name"
+                type="text"
+                name="last_name"
+                value={this.state.last_name}
+              />
+            </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Label>Edit Email: </Form.Label>
+              <Form.Control
+                onChange={this.handleChange}
+                placeholder="Email"
+                type="text"
+                name="email"
+                value={this.state.email}
+              />
+            </Form.Group>
+            <Form.Group controlId="photo_url">
+              <Form.Label>Edit Photo Url: </Form.Label>
+              <Form.Control
+                onChange={this.handleChange}
+                placeholder="Photo Url"
+                type="text"
+                name="photo_url"
+                value={this.state.photo_url}
+              />
+            </Form.Group>
+            <Form.Group controlId="password">
+              <Form.Label>Re-Enter Password: </Form.Label>
+              <Form.Control
+                onChange={this.handleChange}
+                placeholder="password"
+                type="password"
+                name="password"
+                value={this.state.password}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">Update</Button>
+          </Form>
+        </Col>
+      </Row>
     );
   }
 }
