@@ -89,60 +89,6 @@ class RegisterForm extends Component {
           </Form>
         </Col>
       </Row>
-      // <form onSubmit={this.handleSubmit}>
-      //   <div>
-      //     <label htmlFor="username"></label>
-      //     <input
-      //       onChange={this.handleChange}
-      //       placeholder="Username"
-      //       type="text"
-      //       name="username"
-      //       id="username"
-      //       value={this.state.username}
-      //     />
-      //   </div>
-      //   <div>
-      //     <label htmlFor="password"></label>
-      //     <input
-      //       onChange={this.handleChange}
-      //       placeholder="Password"
-      //       type="password"
-      //       name="password"
-      //       value={this.state.password}
-      //     />
-      //   </div>
-      //   <div>
-      //     <label htmlFor="first_name"></label>
-      //     <input
-      //       onChange={this.handleChange}
-      //       placeholder="First Name"
-      //       type="text"
-      //       name="first_name"
-      //       value={this.state.first_name}
-      //     />
-      //   </div>
-      //   <div>
-      //     <label htmlFor="last_name"></label>
-      //     <input
-      //       onChange={this.handleChange}
-      //       placeholder="Last Name"
-      //       type="text"
-      //       name="last_name"
-      //       value={this.state.last_name}
-      //     />
-      //   </div>
-      //   <div>
-      //     <label htmlFor="email"></label>
-      //     <input
-      //       onChange={this.handleChange}
-      //       placeholder="email"
-      //       type="text"
-      //       name="email"
-      //       value={this.state.email}
-      //     />
-      //   </div>
-      //   <button>Register</button>
-      // </form>
     );
   }
 }
