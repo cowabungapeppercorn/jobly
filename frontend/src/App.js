@@ -35,7 +35,9 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Nav currentToken={this.state.currentToken} />
-          <Routes setToken={this.setCurrentToken} currentToken={this.state.currentToken} />
+          <div className="container mt-3">
+            <Routes setToken={this.setCurrentToken} currentToken={this.state.currentToken} />
+          </div>
         </BrowserRouter>
       </div>
     );
