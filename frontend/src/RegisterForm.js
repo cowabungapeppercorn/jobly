@@ -34,12 +34,11 @@ class RegisterForm extends Component {
     return (
       <Row>
         <Col lg={{ span: 6, offset: 3 }}>
-          <Form onSubmit={this.handleSubmit}>
+          <Form onSubmit={this.handleSubmit} className="text-left">
             <Form.Group controlId="username">
               <Form.Label>username</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="username"
                 type="text"
                 name="username"
                 value={this.state.username}
@@ -49,7 +48,6 @@ class RegisterForm extends Component {
               <Form.Label>password</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="password"
                 type="password"
                 name="password"
                 value={this.state.password}
@@ -59,7 +57,6 @@ class RegisterForm extends Component {
               <Form.Label>first name</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="first_name"
                 type="text"
                 name="first_name"
                 value={this.state.first_name}
@@ -69,7 +66,6 @@ class RegisterForm extends Component {
               <Form.Label>last name</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="last_name"
                 type="text"
                 name="last_name"
                 value={this.state.last_name}
@@ -79,7 +75,6 @@ class RegisterForm extends Component {
               <Form.Label>email</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="email"
                 type="text"
                 name="email"
                 value={this.state.email}

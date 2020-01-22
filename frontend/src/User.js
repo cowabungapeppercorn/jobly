@@ -55,53 +55,48 @@ class User extends PureComponent {
     return (
       <Row>
         <Col lg={{ span: 6, offset: 3 }}>
-          <h3>{this.username}'s Profile</h3>
-          <Form onSubmit={this.handleSubmit}>
+          <h3>edit your profile, {this.username}: </h3>
+          <Form onSubmit={this.handleSubmit} className="text-left">
             <Form.Group controlId="first_name">
-              <Form.Label>Edit First Name: </Form.Label>
+              <Form.Label>first name: </Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="First Name"
                 type="text"
                 name="first_name"
                 value={this.state.first_name}
               />
             </Form.Group>
             <Form.Group controlId="last_name">
-              <Form.Label>Edit Last Name: </Form.Label>
+              <Form.Label>last name: </Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="Last Name"
                 type="text"
                 name="last_name"
                 value={this.state.last_name}
               />
             </Form.Group>
             <Form.Group controlId="email">
-              <Form.Label>Edit Email: </Form.Label>
+              <Form.Label>email: </Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="Email"
                 type="text"
                 name="email"
                 value={this.state.email}
               />
             </Form.Group>
             <Form.Group controlId="photo_url">
-              <Form.Label>Edit Photo Url: </Form.Label>
+              <Form.Label>photo url: </Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="Photo Url"
                 type="text"
                 name="photo_url"
                 value={this.state.photo_url}
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Re-Enter Password: </Form.Label>
+              <Form.Label>password: </Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="password"
                 type="password"
                 name="password"
                 value={this.state.password}

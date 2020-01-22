@@ -30,12 +30,11 @@ class LoginForm extends Component {
     return (
       <Row>
         <Col lg={{ span: 6, offset: 3 }}>
-          <Form onSubmit={this.handleSubmit}>
+          <Form onSubmit={this.handleSubmit} className="text-left">
             <Form.Group controlId="username">
               <Form.Label>username</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="username"
                 type="text"
                 name="username"
                 value={this.state.username}
@@ -45,7 +44,6 @@ class LoginForm extends Component {
               <Form.Label>password</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
-                placeholder="password"
                 type="password"
                 name="password"
                 value={this.state.password}
