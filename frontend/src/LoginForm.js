@@ -41,7 +41,7 @@ class LoginForm extends Component {
                 value={this.state.username}
               />
             </Form.Group>
-            <Form.Group controlId="username">
+            <Form.Group controlId="password">
               <Form.Label>password</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
