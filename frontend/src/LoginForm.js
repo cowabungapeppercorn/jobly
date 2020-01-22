@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Col } from "react-bootstrap";
 
 class LoginForm extends Component {
   constructor(props) {
@@ -21,36 +21,38 @@ class LoginForm extends Component {
     evt.preventDefault();
     let loggedIn = await this.props.login(this.state);
     this.setState({ username: "", password: "" });
-    if(loggedIn) {
+    if (loggedIn) {
       this.props.history.push("/");
     }
   }
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <Form.Group controlId="username">
-          <Form.Label>username</Form.Label>
-          <Form.Control 
-            onChange={this.handleChange}
-            placeholder="username"
-            type="text"
-            name="username"
-            value={this.state.username}
-          />
-        </Form.Group>
-        <Form.Group controlId="username">
-          <Form.Label>password</Form.Label>
-          <Form.Control 
-            onChange={this.handleChange}
-            placeholder="password"
-            type="password"
-            name="password"
-            value={this.state.password}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">Login</Button>
-      </Form>
+      <Col lg={{ span: 6, offset: 3 }}>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group controlId="username">
+            <Form.Label>username</Form.Label>
+            <Form.Control
+              onChange={this.handleChange}
+              placeholder="username"
+              type="text"
+              name="username"
+              value={this.state.username}
+            />
+          </Form.Group>
+          <Form.Group controlId="username">
+            <Form.Label>password</Form.Label>
+            <Form.Control
+              onChange={this.handleChange}
+              placeholder="password"
+              type="password"
+              name="password"
+              value={this.state.password}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">Login</Button>
+        </Form>
+      </Col>
     );
   }
 }
