@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
+import { Form, Button } from "react-bootstrap";
 
 class LoginForm extends Component {
   constructor(props) {
@@ -27,29 +28,29 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <label htmlFor="username"></label>
-          <input
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Group controlId="username">
+          <Form.Label>username</Form.Label>
+          <Form.Control 
             onChange={this.handleChange}
             placeholder="username"
             type="text"
             name="username"
             value={this.state.username}
           />
-        </div>
-        <div>
-          <label htmlFor="password"></label>
-          <input
+        </Form.Group>
+        <Form.Group controlId="username">
+          <Form.Label>password</Form.Label>
+          <Form.Control 
             onChange={this.handleChange}
             placeholder="password"
             type="password"
             name="password"
             value={this.state.password}
           />
-        </div>
-        <button>Login</button>
-      </form>
+        </Form.Group>
+        <Button variant="primary" type="submit">Login</Button>
+      </Form>
     );
   }
 }
