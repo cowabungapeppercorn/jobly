@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { Row, Col, Button } from "react-bootstrap";
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import JoblyApi from './JoblyApi';
@@ -36,7 +37,7 @@ class Login extends PureComponent {
       let token = await JoblyApi.login(userData);
       this.props.setToken(token);
       return "nice";
-    } catch(e) {
+    } catch (e) {
       this.setState({ errors: e });
       this.props.history.push('/login');
     }
@@ -55,9 +56,17 @@ class Login extends PureComponent {
 
   render() {
     return (
-      <div>
-        <button onClick={this.clickLogin}>Login</button>
-        <button onClick={this.clickSignUp}>Register</button>
+      <>
+        <Row className="my-3">
+          <Col className="justify-content-between">
+            <Button onClick={this.clickLogin} className="mr-2" disabled={this.state.form === 'Login'} variant="info">
+              Login
+            </Button>
+            <Button onClick={this.clickSignUp} className="ml-2" disabled={this.state.form === 'Register'} variant="info">
+              Register
+            </Button>
+          </Col>
+        </Row>
 
         {this.state.form === 'Login' ?
           <LoginForm login={this.handleLogin} />
@@ -66,7 +75,7 @@ class Login extends PureComponent {
         }
 
         <p>{this.state.errors}</p>
-      </div>
+      </>
     );
   }
 }
