@@ -11,7 +11,8 @@ class User extends PureComponent {
       first_name: '',
       last_name: '',
       email: '',
-      photo_url: ''
+      photo_url: '',
+      loading: true
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +28,8 @@ class User extends PureComponent {
         first_name: user.first_name,
         last_name: user.last_name,
         email: user.email,
-        photo_url: user.photo_url
+        photo_url: user.photo_url,
+        loading: false
       });
     }
     else {
@@ -52,61 +54,65 @@ class User extends PureComponent {
   }
 
   render() {
-    return (
-      <Row>
-        <Col lg={{ span: 6, offset: 3 }}>
-          <h3>edit your profile, {this.username}: </h3>
-          <Form onSubmit={this.handleSubmit} className="text-left">
-            <Form.Group controlId="first_name">
-              <Form.Label>first name: </Form.Label>
-              <Form.Control
-                onChange={this.handleChange}
-                type="text"
-                name="first_name"
-                value={this.state.first_name}
-              />
-            </Form.Group>
-            <Form.Group controlId="last_name">
-              <Form.Label>last name: </Form.Label>
-              <Form.Control
-                onChange={this.handleChange}
-                type="text"
-                name="last_name"
-                value={this.state.last_name}
-              />
-            </Form.Group>
-            <Form.Group controlId="email">
-              <Form.Label>email: </Form.Label>
-              <Form.Control
-                onChange={this.handleChange}
-                type="text"
-                name="email"
-                value={this.state.email}
-              />
-            </Form.Group>
-            <Form.Group controlId="photo_url">
-              <Form.Label>photo url: </Form.Label>
-              <Form.Control
-                onChange={this.handleChange}
-                type="text"
-                name="photo_url"
-                value={this.state.photo_url}
-              />
-            </Form.Group>
-            <Form.Group controlId="password">
-              <Form.Label>password: </Form.Label>
-              <Form.Control
-                onChange={this.handleChange}
-                type="password"
-                name="password"
-                value={this.state.password}
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit">Update</Button>
-          </Form>
-        </Col>
-      </Row>
-    );
+    if (this.state.loading) {
+      return <h1>Loading...</h1>
+    } else {
+      return (
+        <Row>
+          <Col lg={{ span: 6, offset: 3 }}>
+            <h3>edit your profile, {this.username}: </h3>
+            <Form onSubmit={this.handleSubmit} className="text-left">
+              <Form.Group controlId="first_name">
+                <Form.Label>first name: </Form.Label>
+                <Form.Control
+                  onChange={this.handleChange}
+                  type="text"
+                  name="first_name"
+                  value={this.state.first_name}
+                />
+              </Form.Group>
+              <Form.Group controlId="last_name">
+                <Form.Label>last name: </Form.Label>
+                <Form.Control
+                  onChange={this.handleChange}
+                  type="text"
+                  name="last_name"
+                  value={this.state.last_name}
+                />
+              </Form.Group>
+              <Form.Group controlId="email">
+                <Form.Label>email: </Form.Label>
+                <Form.Control
+                  onChange={this.handleChange}
+                  type="text"
+                  name="email"
+                  value={this.state.email}
+                />
+              </Form.Group>
+              <Form.Group controlId="photo_url">
+                <Form.Label>photo url: </Form.Label>
+                <Form.Control
+                  onChange={this.handleChange}
+                  type="text"
+                  name="photo_url"
+                  value={this.state.photo_url}
+                />
+              </Form.Group>
+              <Form.Group controlId="password">
+                <Form.Label>password: </Form.Label>
+                <Form.Control
+                  onChange={this.handleChange}
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit">Update</Button>
+            </Form>
+          </Col>
+        </Row>
+      );
+    }
   }
 }
 

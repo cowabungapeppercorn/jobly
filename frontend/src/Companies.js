@@ -7,14 +7,15 @@ class Companies extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      companies: []
+      companies: [],
+      loading: true
     }
     this.searchCompanies = this.searchCompanies.bind(this);
   }
 
   async componentDidMount() {
     let companies = await JoblyApi.getAllCompanies();
-    this.setState({ companies });
+    this.setState({ companies, loading: false });
   }
 
   async searchCompanies(query) {
@@ -23,12 +24,16 @@ class Companies extends PureComponent {
   } 
 
   render() {
-    return (
-      <div className="container">
-        <SearchForm search={this.searchCompanies} />
-        <CompanyList companies={this.state.companies} />
-      </div>
-    );
+    if (this.state.loading) {
+      return <h1>Loading...</h1>
+    } else {
+      return (
+        <div className="container">
+          <SearchForm search={this.searchCompanies} />
+          <CompanyList companies={this.state.companies} />
+        </div>
+      );
+    }
   }
 }
 
