@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form, Button, Col, Row } from 'react-bootstrap';
 
 class SearchForm extends React.PureComponent {
   constructor(props) {
@@ -22,10 +23,16 @@ class SearchForm extends React.PureComponent {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input style={{ width: '40%' }} onChange={this.handleChange} type='text' placeholder='Search' name='input' id='input' value={this.state.input} />
-        <button type='submit'>Search</button>
-      </form>
+        <Row className="d-flex justify-content-center">
+          <Col lg={8} className="d-flex justify-content-center">
+            <Form inline onSubmit={this.handleSubmit}>
+              <Form.Group>
+                <Form.Control onChange={this.handleChange} type='text' placeholder='Search' name='input' id='input' value={this.state.input} />
+                <Button type='submit'>Search</Button>
+              </Form.Group>
+            </Form>
+          </Col>
+        </Row>
     );
   }
 }
