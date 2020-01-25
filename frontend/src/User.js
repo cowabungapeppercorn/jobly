@@ -59,10 +59,10 @@ class User extends PureComponent {
       return <h1>Loading...</h1>
     } else {
       return (
-        <Row>
-          <Col lg={{ span: 6, offset: 3 }}>
+        <Row className="my-5">
+          <Col lg={{ span: 6, offset: 3 }} className="my-3">
             <h3>edit your profile, {this.username}: </h3>
-            <Form onSubmit={this.handleSubmit} className="text-left">
+            <Form onSubmit={this.handleSubmit} className="text-left mt-5">
               <Form.Group controlId="first_name">
                 <Form.Label>first name: </Form.Label>
                 <Form.Control
