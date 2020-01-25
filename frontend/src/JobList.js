@@ -12,7 +12,7 @@ class JobList extends React.Component {
   }
 
   async componentDidMount() {
-    let jobs = await JoblyApi.allApplications()
+    let jobs = this.props.jobs;
     let appliedJobs = jobs.filter(job => job.state === "applied")
     let appliedJobsIds = []
     appliedJobs.forEach(job => appliedJobsIds.push(job.id))
