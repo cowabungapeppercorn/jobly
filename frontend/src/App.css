@@ -24,3 +24,7 @@
 .jobs .page-item:hover {
   cursor: pointer;
 }
+
+.active-link {
+  background-color: #cccccc;
+}
